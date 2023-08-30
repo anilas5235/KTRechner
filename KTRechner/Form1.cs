@@ -66,11 +66,9 @@ namespace KTRechner
 
             RentPerDay = Rent / AXAConstDaysPerMonths;
             DifferncePerDay = KTperDay - RentPerDay;
-            TotalTimeFrame = (int)(KTPaidUntil - RentStart).TotalDays + 1;
+            TotalTimeFrame = (int)Math.Ceiling((KTPaidUntil - RentStart).TotalDays)+1;          
 
-
-
-
+            //Cacualte the end Date 3 Months after the rent payments started
             DateTime KTended = new DateTime(RentStart.Year, RentStart.Month + NachleistungspflichtMonate, RentStart.Day, RentStart.Hour, RentStart.Minute, RentStart.Second);
             if (KTended.Day == 1)
             {
@@ -78,6 +76,8 @@ namespace KTRechner
                 else KTended = new DateTime(KTended.Year, KTended.Month - 1, DateTime.DaysInMonth(KTended.Year, KTended.Month - 1));
             }
             else KTended = new DateTime(KTended.Year, KTended.Month, KTended.Day - 1);
+
+            DateTime DisplayKTended = KTended;
 
             if ((KTPaidUntil - KTended).TotalDays < 0) KTended = KTPaidUntil;
             DaysUntilKTends = (int)Math.Ceiling((KTended - RentStart).TotalDays) + 1;
@@ -90,9 +90,8 @@ namespace KTRechner
             TotalRecovery = RequiredDaysRecovery + OverPaidDaysRecovery;
 
 
-            dtpKTended.Value = KTended;
+            dtpKTended.Value = DisplayKTended;
             dtpKTended.Refresh();
-
 
             UpadteOutputFields();
         }
@@ -112,17 +111,12 @@ namespace KTRechner
         private double ValidateDoubleInputField(System.Windows.Forms.TextBox InputBox, double currentValue)
         {
             bool valied = true;
-            foreach (var item in InputBox.Text)
-            {
-                if (item == '+' || item == '-') valied = false;
-            }
-
-
+            foreach (var item in InputBox.Text)if (item == '+' || item == '-') valied = false;
+            
             if (valied && Double.TryParse(InputBox.Text, out double inputValue))return inputValue;               
                         
             InputBox.Text = currentValue.ToString("0.00");
             return currentValue;            
-        }
-      
+        }      
     }
 }

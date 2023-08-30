@@ -56,9 +56,9 @@
             this.lbRecoveryRequereddDaysOutput = new System.Windows.Forms.Label();
             this.gbInput = new System.Windows.Forms.GroupBox();
             this.gBPutput = new System.Windows.Forms.GroupBox();
-            this.gbResult = new System.Windows.Forms.GroupBox();
-            this.dtpKTended = new System.Windows.Forms.DateTimePicker();
             this.lbKTended = new System.Windows.Forms.Label();
+            this.dtpKTended = new System.Windows.Forms.DateTimePicker();
+            this.gbResult = new System.Windows.Forms.GroupBox();
             this.gbInput.SuspendLayout();
             this.gBPutput.SuspendLayout();
             this.gbResult.SuspendLayout();
@@ -178,9 +178,9 @@
             this.lbfDifferncePerDayOutput.Location = new System.Drawing.Point(30, 102);
             this.lbfDifferncePerDayOutput.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbfDifferncePerDayOutput.Name = "lbfDifferncePerDayOutput";
-            this.lbfDifferncePerDayOutput.Size = new System.Drawing.Size(116, 18);
+            this.lbfDifferncePerDayOutput.Size = new System.Drawing.Size(123, 18);
             this.lbfDifferncePerDayOutput.TabIndex = 10;
-            this.lbfDifferncePerDayOutput.Text = "Differnenz/Tag:";
+            this.lbfDifferncePerDayOutput.Text = "Differrnenz/Tag:";
             // 
             // lbRecoverySumme
             // 
@@ -191,7 +191,7 @@
             this.lbRecoverySumme.Name = "lbRecoverySumme";
             this.lbRecoverySumme.Size = new System.Drawing.Size(295, 30);
             this.lbRecoverySumme.TabIndex = 12;
-            this.lbRecoverySumme.Text = "Rückforderungs Summe:";
+            this.lbRecoverySumme.Text = "Rückforderungs-Summe:";
             // 
             // tbxRentPerDayOutput
             // 
@@ -243,12 +243,12 @@
             // lbOverPaidDaysOutput
             // 
             this.lbOverPaidDaysOutput.AutoSize = true;
-            this.lbOverPaidDaysOutput.Location = new System.Drawing.Point(369, 30);
+            this.lbOverPaidDaysOutput.Location = new System.Drawing.Point(324, 30);
             this.lbOverPaidDaysOutput.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbOverPaidDaysOutput.Name = "lbOverPaidDaysOutput";
-            this.lbOverPaidDaysOutput.Size = new System.Drawing.Size(96, 18);
+            this.lbOverPaidDaysOutput.Size = new System.Drawing.Size(153, 18);
             this.lbOverPaidDaysOutput.TabIndex = 21;
-            this.lbOverPaidDaysOutput.Text = "Tage zu viel:";
+            this.lbOverPaidDaysOutput.Text = "Tage zu viel gezahlt:";
             // 
             // tbxRequireddDaysOutput
             // 
@@ -267,7 +267,7 @@
             this.lbRequiredDaysOutput.Name = "lbRequiredDaysOutput";
             this.lbRequiredDaysOutput.Size = new System.Drawing.Size(116, 36);
             this.lbRequiredDaysOutput.TabIndex = 19;
-            this.lbRequiredDaysOutput.Text = "Nachleistungs-\r\nPlicht Tage :";
+            this.lbRequiredDaysOutput.Text = "Nachleistungs-\r\npflicht Tage :";
             // 
             // tbxRecoveryOverPaidOutput
             // 
@@ -318,7 +318,7 @@
             this.gbInput.Controls.Add(this.tbxKTPerDayInput);
             this.gbInput.Controls.Add(this.lbRentPerMonthInput);
             this.gbInput.Controls.Add(this.tbxRentPerMonthInput);
-            this.gbInput.Location = new System.Drawing.Point(16, 170);
+            this.gbInput.Location = new System.Drawing.Point(16, 156);
             this.gbInput.Name = "gbInput";
             this.gbInput.Size = new System.Drawing.Size(952, 165);
             this.gbInput.TabIndex = 27;
@@ -344,12 +344,28 @@
             this.gBPutput.Controls.Add(this.tbxKTPerDayOutput);
             this.gBPutput.Controls.Add(this.tbxRequireddDaysOutput);
             this.gBPutput.Controls.Add(this.lbRequiredDaysOutput);
-            this.gBPutput.Location = new System.Drawing.Point(16, 343);
+            this.gBPutput.Location = new System.Drawing.Point(16, 327);
             this.gBPutput.Name = "gBPutput";
             this.gBPutput.Size = new System.Drawing.Size(952, 168);
             this.gBPutput.TabIndex = 28;
             this.gBPutput.TabStop = false;
             this.gBPutput.Text = "AUSGABE";
+            // 
+            // lbKTended
+            // 
+            this.lbKTended.AutoSize = true;
+            this.lbKTended.Location = new System.Drawing.Point(356, 116);
+            this.lbKTended.Name = "lbKTended";
+            this.lbKTended.Size = new System.Drawing.Size(116, 36);
+            this.lbKTended.TabIndex = 28;
+            this.lbKTended.Text = "Nachleistungs-\r\npflicht bis:\r\n";
+            // 
+            // dtpKTended
+            // 
+            this.dtpKTended.Location = new System.Drawing.Point(489, 116);
+            this.dtpKTended.Name = "dtpKTended";
+            this.dtpKTended.Size = new System.Drawing.Size(289, 26);
+            this.dtpKTended.TabIndex = 27;
             // 
             // gbResult
             // 
@@ -362,22 +378,6 @@
             this.gbResult.Size = new System.Drawing.Size(899, 88);
             this.gbResult.TabIndex = 29;
             this.gbResult.TabStop = false;
-            // 
-            // dtpKTended
-            // 
-            this.dtpKTended.Location = new System.Drawing.Point(489, 116);
-            this.dtpKTended.Name = "dtpKTended";
-            this.dtpKTended.Size = new System.Drawing.Size(200, 26);
-            this.dtpKTended.TabIndex = 27;
-            // 
-            // lbKTended
-            // 
-            this.lbKTended.AutoSize = true;
-            this.lbKTended.Location = new System.Drawing.Point(356, 116);
-            this.lbKTended.Name = "lbKTended";
-            this.lbKTended.Size = new System.Drawing.Size(111, 36);
-            this.lbKTended.TabIndex = 28;
-            this.lbKTended.Text = "Nachleistings-\r\npflicht bis:\r\n";
             // 
             // Form1
             // 
